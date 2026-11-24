@@ -34,7 +34,9 @@
     /* Daily route: map first, then a single readable attraction timeline. */
     .travel-panel{margin-top:28px;padding-top:0;border-top:0}.routebox.map-card{position:relative;min-height:370px;margin:12px 0 34px;padding:20px;overflow:hidden;background:#e9e5d7 url('assets/chengdu-map-background.png') center/cover no-repeat}.map-card:before{content:"";position:absolute;inset:0;background:rgba(17,55,47,.2);pointer-events:none}.map-caption{position:relative;z-index:2;display:flex;justify-content:space-between;gap:16px;color:#fff;text-shadow:0 2px 8px rgba(9,37,31,.8)}.map-caption small{color:#fff}.route-graphic{position:relative;z-index:1;width:100%;height:285px}.route-graphic svg{position:absolute;inset:0;width:100%;height:100%}.route-graphic path{fill:none;stroke:#fff3cf;stroke-width:2.2;stroke-dasharray:6 6;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 3px rgba(15,48,41,.7));vector-effect:non-scaling-stroke}.route-pin{position:absolute;left:var(--x);top:var(--y);width:92px;transform:translate(-50%,-24px);text-align:center}.route-pin button{width:92px;min-height:70px;padding:0;border:0;background:transparent;color:#fff;cursor:pointer}.route-pin-media{position:relative;display:block;width:48px;height:48px;margin:auto}.route-pin-media img{display:block;width:48px;height:48px;border:2px solid #f2c879;border-radius:12px;object-fit:cover;box-shadow:0 9px 20px rgba(0,0,0,.24)}.route-pin-number{position:absolute;right:-7px;top:-7px;display:grid;place-items:center;width:25px;height:25px;border:2px solid #f2c879;border-radius:50%;background:#fff;color:var(--ink);font-size:.72rem;font-weight:900}.route-pin small{display:-webkit-box;max-width:92px;margin:5px auto 0;padding:2px 4px;overflow:hidden;border-radius:5px;background:rgba(14,48,40,.86);color:#fff;font-size:.62rem;font-weight:800;line-height:1.2;text-shadow:0 1px 2px #102f28;-webkit-box-orient:vertical;-webkit-line-clamp:2}.route-pin button:hover .route-pin-media img{border-color:#fff}.route-pin button:focus-visible{outline:3px solid #f2c879;outline-offset:4px;border-radius:8px}.place-list{display:block;margin-left:18px;border-left:1px solid #bdcac1}.attraction-card{position:relative;grid-template-columns:132px minmax(0,1fr);gap:18px;margin-left:0;padding:0 0 28px 28px;border-top:0}.attraction-card:before{content:"";position:absolute;left:-7px;top:25px;width:13px;height:13px;border:3px solid var(--paper);border-radius:50%;background:var(--red)}.attraction-card .place-thumb{width:132px;height:104px}.attraction-card h5{font:500 1.18rem/1.25 Georgia,"Noto Serif Thai",serif}.travel-to-place{margin:9px 0 8px;padding:10px 12px;border-radius:9px;background:#edf2f3;color:#294d45;font-size:.8rem}.travel-to-place b{display:block;color:var(--red);font-size:.72rem}.travel-to-place span{display:block;margin-top:2px}.metro{margin-top:0}.metro p{max-width:75ch}.metro-lines{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}.metro-line{display:inline-flex;align-items:center;min-height:30px;padding:4px 9px;border-radius:6px;background:#fff;color:#294d45;font-size:.72rem;font-weight:800}
     @media(max-width:760px){.routebox.map-card{margin-inline:-14px;min-height:350px}.route-graphic{width:100%;height:270px}.attraction-card{grid-template-columns:92px minmax(0,1fr);gap:12px;padding-left:20px}.attraction-card .place-thumb{width:92px;height:84px}.place-list{margin-left:7px}}
-    @media print{#place-view,.place-open,.restaurant-media{display:none!important}}
+    .food-guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.food-guide-card{overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:0 9px 25px rgba(18,55,46,.06)}.food-guide-card img{width:100%;height:210px;display:block;object-fit:cover;background:var(--mint)}.food-guide-body{padding:20px}.food-guide-body h3{font-size:1.18rem;line-height:1.35;margin:6px 0 3px}.food-guide-body p{margin:10px 0;color:var(--muted);font-size:.9rem}.food-guide-body .food-readable{margin:0 0 3px;color:var(--ink);font-weight:800}.food-guide-body .links{margin-top:14px}.food-day{font-weight:800;font-size:.8rem;color:var(--red)}.food-dish{border-top:1px solid var(--line);padding-top:12px}.food-dish b{color:var(--ink)}.food-source{font-size:.8rem;color:var(--muted)}.food-source a{color:var(--ink)}.food-guide-note{margin-top:22px;color:var(--muted);font-size:.88rem}
+    @media(max-width:900px){.food-guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.food-guide-grid{grid-template-columns:1fr}.food-guide-card img{height:220px}.trip-tabs{gap:15px;overflow-x:auto}.trip-tab{white-space:nowrap}}
+    @media print{#place-view,.place-open{display:none!important}.food-guide-grid{grid-template-columns:1fr 1fr}.food-guide-card{break-inside:avoid}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
   </style>
 </head>
@@ -44,7 +46,7 @@
       <div class="top"><div class="brand">FIELD NOTES / CHENGDU</div><nav><a href="#plan">แผนรายวัน</a></nav><button class="printbtn" onclick="window.print()">พิมพ์ / บันทึก PDF</button></div>
       <div class="hero-grid">
         <div><h1>成都<span>เฉิงตู · ภูเขา · สายน้ำ · ครัวเสฉวน</span></h1><p class="lead">แพลนมือถือสำหรับใช้หน้างาน: พักแถว Chunxi Road, พักให้พอหลังไฟลต์, เดินทางไม่ย้อนเส้น และมีชื่อจีนพร้อมปุ่มเปิด Amap / Google Maps ทุกจุด</p><div class="hero-tags"><span class="pill">27 พ.ย. — 2 ธ.ค. 2026</span><span class="pill">พัก Chunxi Road</span><span class="pill">TFU 27 พ.ย. 02:00</span><span class="pill">TFU 2 ธ.ค. 20:30</span><span class="pill">2 วันทัวร์ภูเขา</span></div></div>
-        <div class="route-art" aria-label="ภาพเส้นทางแบบตกแต่ง"><div class="map-shape"></div><div class="route-line"></div><span class="dot d1">水</span><span class="dot d2">熊</span><span class="dot d3">山</span><span class="dot d4">客</span><span class="art-note">จากระบบชลประทานอายุสองพันปี สู่หุบเขาหิมะและชุมชนแคะ</span></div>
+        <div class="route-art" aria-label="ภาพเส้นทางแบบตกแต่ง"><div class="map-shape"></div><div class="route-line"></div><span class="dot d1">水</span><span class="dot d2">熊</span><span class="dot d3">山</span><span class="dot d4">街</span><span class="art-note">จากตรอกเมืองและอาหารเสฉวน สู่แพนด้า หุบเขาหิมะ และระบบน้ำเก่าแก่</span></div>
       </div>
     </div>
   </header>
@@ -52,7 +54,7 @@
   <div class="quick wrap"><div class="quick-grid"><div class="quick-item"><small>ถึงเมือง</small><strong>27 พ.ย. · 02:00</strong></div><div class="quick-item"><small>กลับ</small><strong>2 ธ.ค. · 20:30</strong></div><div class="quick-item"><small>ทัวร์ / คน</small><strong>฿3,610 + ฿55</strong></div><div class="quick-item"><small>จ่ายเพิ่มอุทยาน / คน</small><strong class="danger">¥200</strong></div></div></div>
 
   <main class="wrap" id="plan">
-    <div class="trip-tabs" role="tablist" aria-label="ดูข้อมูลทริป"><button class="trip-tab active" id="tab-plan" role="tab" aria-selected="true" aria-controls="plan-panel" data-view="plan">แผนรายวัน</button><button class="trip-tab" id="tab-places" role="tab" aria-selected="false" aria-controls="places-panel" data-view="places">ที่เที่ยวทั้งหมด</button></div>
+    <div class="trip-tabs" role="tablist" aria-label="ดูข้อมูลทริป"><button class="trip-tab active" id="tab-plan" role="tab" aria-selected="true" aria-controls="plan-panel" data-view="plan">แผนรายวัน</button><button class="trip-tab" id="tab-places" role="tab" aria-selected="false" aria-controls="places-panel" data-view="places">ที่เที่ยวทั้งหมด</button><button class="trip-tab" id="tab-food" role="tab" aria-selected="false" aria-controls="food-panel" data-view="food">ร้านที่ควรไป</button></div>
     <section id="plan-panel" role="tabpanel" aria-labelledby="tab-plan">
       <div class="toolbar" aria-label="ตัวกรองวัน"><button class="filter active" data-filter="all" aria-pressed="true">ทั้งหมด</button><button class="filter" data-filter="self" aria-pressed="false">เที่ยวเอง</button><button class="filter" data-filter="tour" aria-pressed="false">ทัวร์</button></div>
       <div class="days" id="days"></div>
@@ -61,74 +63,52 @@
       <div class="section-head places-head"><div><h2>ที่เที่ยวในทริปนี้</h2></div><p>รวมสถานที่หลักทั้งหมด พร้อมวันที่ไป กดชื่อสถานที่เพื่อเปิดหน้ารูปและไฮไลต์เดียวกับในแผนรายวัน</p></div>
       <div class="places-index" id="places-index"></div>
     </section>
+    <section id="food-panel" role="tabpanel" aria-labelledby="tab-food" hidden>
+      <div class="section-head places-head"><div><h2>ร้านที่ควรไป</h2></div><p>ร้านที่อยากแวะในทริป พร้อมภาพ เมนูเด่น ชื่อจีน และแผนที่ เลือกกินตามเวลาจริงได้โดยไม่ต้องไล่ร้านในแต่ละวัน</p></div>
+      <div class="food-guide-grid" id="food-guide"></div>
+      <p class="food-guide-note">เมนูที่ติดป้าย “ซิกเนเจอร์” อ้างอิงคำแนะนำของร้านหรือสื่อท้องถิ่น ส่วนเมนูอื่นระบุเป็น “แนะนำ” · เช็กสาขา เวลาเปิด ราคา และเมนูที่มีจริงใน Amap ก่อนออก</p>
+    </section>
   </main>
 
   <section id="place-view" hidden aria-live="polite"><div class="wrap"><button id="back-plan" type="button">กลับไปแผนรายวัน</button><article id="place-detail"></article></div></section>
 
-  <footer class="footer"><div class="wrap footer-grid"><div class="stamp">ตรวจข้อมูล · 15 พ.ย. 2026</div></div></footer>
+  <footer class="footer"><div class="wrap footer-grid"><div class="stamp">ปรับแผน · 24 พ.ย. 2026</div></div></footer>
 
   <script>
     const enNames={'成都天府国际机场':'Tianfu International Airport (TFU)','成都 春熙路':'Chunxi Road','成都 犀浦站':'Xipu Station','都江堰 离堆公园站':'Lidui Park Station','都江堰 灌县古城':'Guanxian Ancient Town','都江堰 城隍庙':'Chenghuang Temple','都江堰 二王庙':'Erwang Temple','都江堰 安澜索桥':'Anlan Suspension Bridge','都江堰 鱼嘴分水堤':'Yuzui Fish-Mouth Levee','都江堰 南桥':'Nanqiao Bridge','成都大熊猫繁育研究基地 西大门':'Chengdu Research Base of Giant Panda Breeding · West Gate','成都 天府艺术公园':'Tianfu Art Park','成都市天府美术馆':'Chengdu Tianfu Art Museum','毕棚沟景区':'Bipenggou Scenic Area','理县':'Li County','四姑娘山 双桥沟景区':'Mount Siguniang · Shuangqiaogou Valley','双桥沟景区游客中心':'Shuangqiaogou Visitor Center','成都 金科北路':'Jinke North Road','成都 洛带博客楼':'Luodai Boke Building','成都 洛带古镇':'Luodai Ancient Town','成都 东安湖公园':'Dong’an Lake Park','成都 文殊院':'Wenshu Monastery','成都 文殊坊':'Wenshufang','成都 太古里':'Chengdu Taikoo Li'};
     const english=(q)=>enNames[q]||q;
     const mapLinks=(q)=>{const x=encodeURIComponent(q);return `<div class="links"><a class="maplink" target="_blank" rel="noopener" href="https://uri.amap.com/search?keyword=${x}&city=成都&view=map&callnative=1">เปิด Amap · 高德地图</a><a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${x}">เปิด Google Maps</a></div>`};
     const stops=(items)=>items.map(s=>`<div class="stop"><div class="time">${s[0]}</div><div><h4>${s[1]}</h4><p>${s[2]}</p>${mapLinks(s[3]||s[1])}</div></div>`).join('');
-    const restaurantMedia={
-      '华兴煎蛋面（总店）':{shop:'https://zgcpcyppw.com/upload/editor/image/20201016/20201016101451_59902.jpg',food:'https://ak-d.tripcdn.com/images/0102z120008jss3h22557.jpg?proc=source%2Ftrip',near:'จาก Chunxi Road เดินประมาณ 10–15 นาที',how:'เดินหรือเรียก DiDi ถ้าฝนตก'},
-      '赵卖面':{shop:'https://dimg04.c-ctrip.com/images/100o08000000394nbE036_D_750_450_Q80.jpg?proc=autoorient',food:'https://ak-d.tripcdn.com/images/0102a120008az09e1EF8C.jpg',near:'จาก Guanxian Ancient Town เดินประมาณ 8–12 นาที',how:'เดินจาก Lidui Park ผ่านถนนเมืองเก่า'},
-      '宽窄·我家小院':{shop:'https://aos-comment.amap.com/B0FFGFUS4S/comment/20260318-f6e2ae79037304d5c2bb63af-8tmLjs08iN48LJIvELHz2g.jpg',food:'https://qcloud.dpfile.com/pc/2p_z7tEKsRygUJQR2c9JYP6wHTaD8NCsjQxqvLYp8JeDrHx3403SEg5dUJI6XFidMSA7eJMy80BwuDqlQwqdglEuLYk00OmSS1IdNpm8K8sG4JN9RIm2mTKcbLtc2o2vmIU_8ZGOT1OjpJmLxG6urQ.jpg',near:'จาก Panda Base West Gate นั่งรถประมาณ 10–15 นาที',how:'เรียก DiDi และใช้ชื่อจีนของร้าน'},
-      '明婷小馆':{shop:'https://api.xtremefoodies.com/uploads/images/item/16996962862062451114988.jpg',food:'https://p7.itc.cn/images01/20200702/43ce82bffdd647f195b319fbcdea4783.jpeg',near:'จาก Taikoo Li นั่งรถประมาณ 10–20 นาที',how:'เช็กสาขาใน Amap ก่อนเรียกรถ'},
-      '洛带供销社饭店':{shop:'https://img-cdn.newslqy.com/catchimages/20241228/1735353411225075680.jpg?x-image-process=image%2Fquality%2Cq_95',food:'https://img-cdn.newslqy.com/catchimages/20241228/1735353411565013344.jpg?x-image-process=image%2Fquality%2Cq_95',near:'อยู่ใน Luodai Ancient Town เดินประมาณ 3–8 นาทีจากถนนหลัก',how:'เดินตามป้าย 供销社饭店'},
-      '蒲氏石磨豆花':{shop:'https://ak-d.tripcdn.com/images/1mi39224x92ykdb21816B_W_640_0_R5_Q80.jpg?proc=source%2Ftrip',food:'https://ak-d.tripcdn.com/images/1mi6x224x92yldnsr8777_W_640_0_R5_Q80.jpg?proc=source%2Ftrip',near:'อยู่ใน Luodai Ancient Town เดินประมาณ 5–10 นาที',how:'เดินจาก Guangdong Guild Hall ไปทางถนน下街'},
-      '伤心凉粉（洛带镇店）':{shop:'https://su.bcebos.com/b2b-jiameng/online/85a488e4-3a7f-4599-bb4b-2288d2b17e86',food:'https://album.udn.com/community/img/PSN_PHOTO/taiwanmickey/f_3217034_1.JPG',near:'อยู่ในเขตเมืองเก่า เดินประมาณ 5–10 นาที',how:'ค้นชื่อ 伤心凉粉 洛带镇店 ใน Amap'},
-      '秋金小炒':{shop:'https://cnyyyy.com/ll/ll05/X001/20250105231937.png',food:'https://youimg1.c-ctrip.com/target/100c0v000000jy66b7F6B.jpg',near:'จาก Chunxi/Taikoo Li ประมาณ 5–15 นาที ขึ้นกับสาขา',how:'เลือกสาขาที่ใกล้จาก Amap วันจริง'},
-      '洞子口张老二凉粉':{shop:'https://www.cnpp100.com/uploads/allimg/190404/1-1Z4041210030-L.jpg',food:'https://img1.qunarzz.com/travel/d3/1511/5c/4cbdca83438373f7.jpg',near:'จากประตู Wenshu Monastery เดินประมาณ 3–5 นาที',how:'เดินข้ามไปฝั่ง Wenshufang'},
-      '严太婆锅魁（文殊院店）':{shop:'https://youimg1.c-ctrip.com/target/100k170000012iktw377C.jpg',food:'https://5b0988e595225.cdn.sohucs.com/q_70%2Cc_zoom%2Cw_640/images/20200302/77ec257e772849acaee92623276c48d5.jpeg',near:'จาก Wenshu Monastery เดินประมาณ 5–8 นาที',how:'ร้านเป็นคีออสก์เล็ก คิวมักยาว'}
-    };
-    const rest=(r,meal)=>{const media=restaurantMedia[r[0]];const photos=media?`<div class="restaurant-media"><figure><img src="${media.shop}" alt="หน้าร้าน ${r[0]}" loading="lazy" onerror="this.closest('figure').classList.add('image-missing')"><figcaption>หน้าร้าน</figcaption></figure><figure><img src="${media.food}" alt="อาหารของร้าน ${r[0]}" loading="lazy" onerror="this.closest('figure').classList.add('image-missing')"><figcaption>อาหาร</figcaption></figure></div>`:`<div class="restaurant-media missing"><span>ยังไม่มีภาพร้านที่เช็กแหล่งแล้ว แต่ยังเก็บร้านนี้ไว้เป็นตัวเลือก</span></div>`;const near=media?`<b>${media.near}</b><br>${media.how}`:`<b>อยู่ในย่านของ ${meal}</b><br>กด Amap เพื่อดูระยะจากที่เที่ยวและเลือกสาขาก่อนออก`;return `<div class="restaurant">${photos}<h5>${r[0]} <small class="english">${r[7]||''}</small></h5><p>${r[1]}</p><div class="meta"><span class="badge">${r[2]}</span><span class="badge">${r[3]}</span></div><p class="restaurant-route">${near}</p>${mapLinks(r[6]||r[0])}</div>`};
-    const meals=(items)=>`<div class="food-title"><h4>ร้านอาหาร</h4><span>แต่ละมื้อมี 3 ตัวเลือก เลือกร้านที่เข้าทางที่สุดจาก Amap ก่อนออก</span></div><div class="meals">${items.map((m,i)=>`<details class="meal" ${i===0?'open':''}><summary class="meal-head"><span>${m[0]}</span><span>${m[1]} · ${m.slice(2).length} ตัวเลือก</span></summary><div class="options">${m.slice(2).map(r=>rest(r,m[0])).join('')}</div></details>`).join('')}</div>`;
-    const cityBreakfast=[
-      ['华兴煎蛋面（总店）','มะเขือเทศไข่ดาว面 / 番茄煎蛋面','¥15–25','เผ็ด 0–1','B','ร้านเส้นเก่าในโซน Huaxing; เหมาะมื้อเร็ว','成都 华兴煎蛋面 总店'],
-      ['71号豆汤饭','豆汤饭 + 凉拌菜 ข้าวซุปถั่วกับกับเย็น','¥18–30','เผ็ด 0–1','A','รายชื่อร้านที่คนพื้นที่กินซ้ำในโซน Chunxi ปี 2026','成都 71号豆汤饭'],
-      ['盘飧市（华兴街店）','卤肉 / 锅盔 เนื้อตุ๋นเย็นกับกัวขุย','¥25–45','เผ็ด 0–1','B','แบรนด์อาหารเสฉวนเก่าแก่; เช็กเวลาเปิดก่อนใช้เป็นมื้อเช้า','成都 盘飧市 华兴街店']
+    const foodGuide=[
+      {day:'27 พ.ย. · ใกล้ IFS',name:'董食汇自助火锅',en:'Dong Shi Hui Buffet Hotpot',query:'成都 董食汇自助火锅 IFS',dish:'บุฟเฟต์หม้อไฟหม่าล่า หม้อแบ่งน้ำซุปเผ็ด/ไม่เผ็ด',label:'เมนูเด่น',note:'รีวิวระบุราว ¥88/คน แต่ราคาและเงื่อนไขบุฟเฟต์อาจเปลี่ยน ขอ 微辣 ได้',image:'https://www.lemon8-app.com/seo/image?index=0&item_id=7566956547776021000&sign=e8db42e263912e501b82d29006f26f0e',source:'https://sg.trip.com/moments/detail/chengdu-104-146605608/'},
+      {day:'27 พ.ย. · ช่วงค่ำ',name:'抚琴夜市',en:'Fuqin Night Market',query:'成都 抚琴夜市',dish:'串串 ไม้เสียบ · 烤苕皮 แผ่นมันย่าง · 冰粉 ขนมเย็น',label:'ของกินแนะนำ',note:'เป็นตลาดหลายแผง เลือกชิมหลังมื้อบุฟเฟต์ ไม่ต้องสั่งเป็นมื้อเต็ม',image:'https://dimg04.c-ctrip.com/images/1me4i12000ra6ea1cD500.jpg?proc=source%2Ftripcommunity',source:'https://gs.ctrip.com/html5/you/sight/chengdu104/143177151.html'},
+      {day:'28 พ.ย. · หลังพิพิธภัณฑ์',name:'陶德砂锅（花照壁店）',en:'Taode Claypot',query:'成都 陶德砂锅 花照壁店',dish:'酸菜乌鱼片 ปลาต้มผักกาดดอง · 蒜蓉虾仁 กุ้งกระเทียมบนวุ้นเส้น',label:'เมนูแนะนำ',note:'สาขา花照壁อยู่一品天下大街808号; แสดงรูปเมนูให้ร้านดูเพื่อยืนยันแบบวุ้นเส้น',image:'https://ak-d.tripcdn.com/images/1mi45224x94lgm654475B.jpg?proc=source%2Ftrip',source:'https://www.sclsgcy.com/9454/'},
+      {day:'30 พ.ย. · ถ้าทัวร์กลับทัน',name:'蟹叁宝·蟹黄捞饭（成都太古里店）',en:'Xie San Bao',query:'成都 蟹叁宝 蟹黄捞饭 太古里店',dish:'蟹黄捞面 บะหมี่คลุกมันปู',label:'เมนูเด่น',note:'อยู่แถว油篓街65号 ถ้ารถทัวร์กลับช้า เลื่อนไปวันที่ 2 ธ.ค. ช่วงเที่ยง',image:'https://qcloud.dpfile.com/pc/sHadRitPHY9kaF8_OPBLkax0yk_raIpwdviq53g5m-p4uOhzbusutxhaYzmPi5YPMSA7eJMy80BwuDqlQwqdglEuLYk00OmSS1IdNpm8K8sG4JN9RIm2mTKcbLtc2o2vmIU_8ZGOT1OjpJmLxG6urQ.jpg',source:'https://m.dianping.com/discovery/968649578'},
+      {day:'1 ธ.ค. · เมืองเก่าตูเจียงเยี่ยน',name:'乐以里·小饺子',en:'Leyili · Small Dumplings',query:'都江堰 乐以里 小饺子 曾家巷26号',dish:'甜水面 บะหมี่หวาน · 开口笑小饺子 เกี๊ยวตัวเล็ก',label:'ซิกเนเจอร์',note:'ค้นชื่อร้านและพิกัด曾家巷26–28号ใน Amap',image:'https://ak-d.tripcdn.com/images/0106312000a754sfi6292_D_340_230_R5_Q70.png',source:'https://th.trip.com/restaurant/china/dujiangyan/detail/restaurant-131021566/'},
+      {day:'2 ธ.ค. · มื้อกลางวันในเมือง',name:'陶陶居酒家（成都太古里店）',en:'Tao Tao Ju',query:'成都 陶陶居酒家 太古里店',dish:'虾饺 ฮะเก๋ากุ้ง · 红米肠 ก๋วยเตี๋ยวหลอดข้าวแดง',label:'ซิกเนเจอร์: 虾饺',note:'ติ่มซำชั้น 2 โซนตะวันออก Taikoo Li เผื่อคิวและจบมื้อก่อนกลับโรงแรม',image:'https://assets.unseenchina.com/images/restaurants/taotaoju-chengdu-taikooli/taotaoju-chengdu-signature-shrimp-dumplings.jpg',source:'https://www.unseenchina.com/en/restaurant/tao-tao-ju-taikoo-li-chengdu'},
+      {day:'27 หรือ 2 ธ.ค. · Taikoo Li',name:'TRUFFE BOULANGERIE by B&C 松露与面包',en:'Truffe Boulangerie',query:'成都 TRUFFE BOULANGERIE 松露与面包 四川旗舰店',dish:'法式黄油牛角包 ครัวซองต์เนยฝรั่งเศส · 黑松露牛角包 ครัวซองต์ทรัฟเฟิล',label:'ซิกเนเจอร์: ครัวซองต์เนย',note:'สาขา四川旗舰店 ชั้น 1 Taikoo Li อาคาร 15 ร้าน 1226',image:'https://ak-d.tripcdn.com/images/0103r12000q30oyyg4C83.jpg',source:'https://gs.ctrip.com/html5/you/foods/fooddetail/104/136016579.html'},
+      {day:'27 หรือ 2 ธ.ค. · Chunxi Road',name:'李山山茶事（REX春熙店）',en:'Li Shan Shan Tea',query:'成都 李山山茶事 REX春熙店',dish:'碎米银子 ชานมกลิ่นข้าว · 柑香肉桂 ชากลิ่นส้มอบเชย',label:'เมนูยอดนิยม',note:'จุดเด่นคือชานมชงด้วยหม้อดิน อยู่春熙路北段49号; เลือกหวานน้อยได้',image:'https://ak-d.tripcdn.com/images/1mi3y224x8xgrvarq4306_W_640_0_R5_Q80.jpg?proc=source%2Ftrip',source:'https://hk.trip.com/restaurant/china/chengdu/detail/lishanshan-136662932/'},
+      {day:'27 หรือ 2 ธ.ค. · ของฝาก Chunxi',name:'廣泰門（春熙路店）',en:'Guang Tai Men',query:'成都 广泰门 春熙路 银石广场',dish:'蛋挞 ทาร์ตไข่อบใหม่ · 超长蛋挞 ทาร์ตไข่แท่งยาว',label:'เมนูเด่น',note:'สาขา银石广场 ชั้น 1; ถ้าซื้อกลับไทย ควรเช็กอายุขนมและการเก็บรักษา',image:'https://resource02.ulifestyle.com.hk/ublog/post/w960/202508/17560061756.jpeg',source:'https://www.guangtaimen.com/product/detail/product-22511-12901-1.html'}
     ];
-    const cityDinner=[
-      ['雨田饭店（华兴东街店）','荷叶烧肉、咸烧白 หมูอบใบบัว/หมูนึ่งเค็ม','¥35–60','เผ็ด 1–2','A','สื่อจีนปี 2026 ระบุเป็น老牌苍蝇馆子และลูกค้ากลับซ้ำ','成都 雨田饭店 华兴东街店'],
-      ['明婷小馆','脑花豆腐、奇香排骨 เต้าหู้สมองหมู/ซี่โครง','¥50–80','เผ็ด 2–3','B','ร้านชุมชนเก่าแก่ แม้ปัจจุบันดังและมีนักท่องเที่ยวบ้าง','成都 明婷小馆'],
-      ['饕林餐厅','蒜泥白肉、回锅肉 หมูสามชั้นกระเทียม/หมูผัดสองรอบ','¥55–90','เผ็ด 1–2','B','ร้านเสฉวนที่คนเมืองรู้จักหลายสาขา; เลือกสาขาตาม Amap','成都 饕林餐厅 春熙路']
-    ];
+    const thaiFoodNames={'董食汇自助火锅':'ต่งสือฮุ่ย','抚琴夜市':'ตลาดกลางคืนฝู่ฉิน','陶德砂锅（花照壁店）':'เถาเต๋อ ซากัว','蟹叁宝·蟹黄捞饭（成都太古里店）':'เซี่ยซานเป่า','乐以里·小饺子':'เล่ออี่หลี่','陶陶居酒家（成都太古里店）':'เถาเถาจวี่','TRUFFE BOULANGERIE by B&C 松露与面包':'ทรัฟเฟิล บูลังเฌอรี','李山山茶事（REX春熙店）':'หลี่ซานซาน','廣泰門（春熙路店）':'กว่างไท่เหมิน'};
+    function renderFoodGuide(){document.getElementById('food-guide').innerHTML=foodGuide.map(r=>`<article class="food-guide-card"><img src="${r.image}" alt="${r.en} · ${r.dish}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'no-photo',textContent:'ภาพโหลดไม่ได้ · ดูแหล่งข้อมูลร้าน'}))"><div class="food-guide-body"><span class="food-day">${r.day}</span><h3>${r.en}</h3><p class="food-readable">${thaiFoodNames[r.name]}</p><small class="english">${r.name} · ชื่อจีนสำหรับค้นในแผนที่</small><p class="food-dish"><b>${r.label}</b><br>${r.dish}</p><p>${r.note}</p>${mapLinks(r.query)}<p class="food-source"><a href="${r.source}" target="_blank" rel="noopener">ดูแหล่งข้อมูลร้าน</a></p></div></article>`).join('')}
     const days=[
-      {d:'27',dow:'ศุกร์',kind:'self',title:'ตูเจียงเยี่ยน · เมืองเก่า สายน้ำ และ Blue Tears',sub:'พักหลังไฟลต์ก่อน · ออกสายขึ้น · เดินทางเดียวไม่ย้อน',notice:'อย่าจองรถไฟเที่ยวเช้า: หลังลง TFU 02:00 คาดถึงโรงแรมราว 03:30–04:00 ให้พักถึงประมาณ 09:30 แล้วค่อยออก จุดชม “Blue Tears” คือแสงประดับสะท้อนน้ำ ไม่ใช่ปรากฏการณ์ธรรมชาติและอาจงดเปิดบางคืน',route:'Chunxi Road → (Metro) 犀浦 Xipu → (C-train) 离堆公园 Lidui Park → 古城/城隍庙 → 二王庙 → 安澜索桥 → 水利工程 → 南桥 → กลับเฉิงตู',stops:[
-        ['02:00','ถึง TFU / 天府国际机场','รับกระเป๋า + ตม. แล้ว DiDi/รถสนามบินไปโรงแรม; กลางคืนรถไฟใต้ดินไม่ใช่ตัวเลือกหลัก','成都天府国际机场'],
-        ['09:30','ตื่น + brunch แถว Chunxi','ไม่กดดันเวลาเช้า ฝากกระเป๋าและเตรียมเสื้อกันลม','成都 春熙路'],
-        ['11:00','ไป Xipu / 犀浦站','Metro จาก Chunxi โดยเผื่อเปลี่ยนสายและเดินในสถานี','成都 犀浦站'],
-        ['12:15','Lidui Park / 离堆公园站','เวลาจริงขึ้นกับขบวน 12306; จากสถานีเดินเข้า Guanxian Ancient Town','都江堰 离堆公园站'],
-        ['12:30','Guanxian Ancient Town / 灌县古城','กำแพงเมือง ถนนเก่า และมื้อกลางวันแบบเร็ว','都江堰 灌县古城'],
-        ['13:30','Chenghuang Temple / 都江堰城隍庙','สถาปัตยกรรมบน Yulei Mountain; ทางเดินมีบันได','都江堰 城隍庙'],
-        ['14:15','Erwang Temple / 二王庙','ชมแกนประวัติศาสตร์ Li Bing และมุมเหนือระบบน้ำ','都江堰 二王庙'],
-        ['15:10','Anlan Bridge / 安澜索桥','สะพานแขวนเหนือ Minjiang—ระวังคนแน่นและลม','都江堰 安澜索桥'],
-        ['15:45','Dujiangyan Irrigation System / 都江堰景区','鱼嘴 → 飞沙堰 → 宝瓶口: หัวใจการแยกน้ำ ระบายตะกอน และควบคุมปริมาณ','都江堰 鱼嘴分水堤'],
-        ['18:15','Nanqiao / 南桥 · Blue Tears','กินเย็นก่อนหรือหลังชมไฟ ถ่ายรูปริมแม่น้ำโดยไม่ลงพื้นที่ลื่น','都江堰 南桥']
-      ],food:[['มื้อเช้า/สาย · Chunxi','เลือกก่อนออก 1 ร้าน',...cityBreakfast],['มื้อกลางวัน · 灌县古城','ใกล้สถานี/เมืองเก่า',
-        ['赵卖面','开口水饺、甜水面 เกี๊ยวเปิดปาก/เส้นหวานเผ็ด','¥15–30','เผ็ด 1–2','A','ถูกระบุในไกด์ภาษาจีนปัจจุบันเป็นเส้นทางเช้าของคนเมือง','都江堰 赵卖面'],
-        ['北街米线','笋子牛肉米线 เส้นข้าวเนื้อหน่อไม้','¥15–30','เผ็ด 1–2','A','อาหารเช้า/เที่ยงของโซน老城ตามรายชื่อปี 2026','都江堰 北街米线'],
-        ['老灌县本味土菜馆','蹄花、家常小炒 ขาหมูตุ๋น/ผัดบ้านๆ','¥45–80','เผ็ด 1–2','A','รายงานปี 2026 ระบุเปิดกว่า 20 ปีและมีกลุ่มลูกค้าท้องถิ่น','都江堰 老灌县本味土菜馆']
-      ],['มื้อเย็น · 南桥/老城','กินก่อนดูไฟหรือหลัง 19:00',
-        ['老灌县本味土菜馆','蹄花汤 + 蒸菜 ซุปขาหมูและเมนูนึ่ง','¥45–80','เผ็ด 0–1','A','ตัวเลือกอุ่นท้องและหลักฐานลูกค้าท้องถิ่นชัด','都江堰 老灌县本味土菜馆'],
-        ['圆眼镜串串香','串串香 เลือกไม้และขอ微辣','¥45–75','เผ็ด 2–3','B','ชื่อถูกระบุในไกด์จีนปัจจุบันแถว胡家巷; ดังแล้วแต่ยังเป็นรสท้องถิ่น','都江堰 圆眼镜串串香'],
-        ['尤兔头','兔头、卤味 หัวกระต่าย/ของพะโล้','¥25–50','เผ็ด 2–3','B','ของกินเฉพาะถิ่น; เช็กสาขาใกล้古城ใน Amap','都江堰 尤兔头']
-      ]]},
-      {d:'28',dow:'เสาร์',kind:'self',title:'ฐานแพนด้า · Chengdu Art Museum',sub:'เช้าอยู่กับแพนด้า · บ่ายสถาปัตยกรรมและนิทรรศการ',notice:'ฐานแพนด้าฤดูหนาวเปิดรับรอบเช้า 08:00–12:00 และจองล่วงหน้าได้ 14 วัน; วันนี้เป็นวันเสาร์ ควรถึงก่อน 08:00. “Chengdu Art Museum” ในแผนนี้คือ 成都市天府美术馆 (A区) ที่ Tianfu Art Park',route:'Chunxi → 熊猫基地西大门 (DiDi เหมาะสุดตอนเช้า) → Metro/DiDi ไป 天府艺术公园 → Chunxi',stops:[
-        ['06:45','ออกจากโรงแรม','กินเช้าเร็ว/ซื้อกลับ แล้วเรียก DiDi ไปประตูที่ตั๋วระบุ','成都 春熙路'],
-        ['07:45','Panda Base / 成都大熊猫繁育研究基地','เข้ารอบเช้า เริ่มโซนที่อยากเห็นที่สุดก่อน; แพนด้ามักเคลื่อนไหวมากกว่าช่วงบ่าย','成都大熊猫繁育研究基地 西大门'],
-        ['12:15','มื้อกลางวัน','เพื่อไม่เสียเวลามาก ใช้ร้านในสวนหรือออกไปกินร้านชุมชนแล้วเรียกรถต่อ','成都大熊猫繁育研究基地'],
-        ['14:30','Tianfu Art Museum / 成都市天府美术馆','อาคารรูปดอกชบา ชมงาน 2–3 ชั่วโมง; ฟรีแต่ต้องมีการจองเมื่อระบบกำหนด','成都市天府美术馆'],
-        ['17:30','Tianfu Art Park / 天府艺术公园','เดินรอบ迎桂湖 ชมอาคาร A/B ในแสงเย็น','成都 天府艺术公园'],
-        ['19:15','กลับเข้าเมือง + มื้อเย็น','เลือกร้านย่าน Huaxing/Chunxi แล้วพักเร็วสำหรับรถทัวร์เช้ามืด','成都 春熙路']
-      ],food:[['มื้อเช้า · Chunxi','06:30–07:00; เช็กเวลาเปิด',...cityBreakfast],['มื้อกลางวัน · Panda Base','ความสะดวก vs ความ local',
-        ['宽窄·我家小院','家常川菜 อาหารเสฉวนบ้านๆ','¥45–80','เผ็ด 1–2','B','สื่อ China Tourism News กล่าวถึงร้านใกล้ฐาน; ต้องเรียกรถ','成都 宽窄我家小院 熊猫基地'],
-        ['王记特色面馆','红烧牛肉面 บะหมี่เนื้อตุ๋น','¥15–30','เผ็ด 1–2','B','ชื่อปรากฏในไกด์อาหารรอบฐานปี 2026; เช็กสาขา/เวลาใน Amap','成都 熊猫基地 王记特色面馆'],
-        ['熊猫基地中餐厅','抄手、面、炒饭 เกี๊ยว/เส้น/ข้าวผัด','¥30–60','เผ็ด 0–1','C','ข้อมูลทางการยืนยันว่าอยู่ข้าง Swan Lake; สะดวกแต่เป็นร้านในแหล่งท่องเที่ยว','成都大熊猫繁育研究基地 中餐厅']
-      ],['มื้อเย็น · เมือง','กลับ Chunxi แล้วเลือก',...cityDinner]]},
+      {d:'27',dow:'ศุกร์',kind:'self',title:'ซอยกว้างซอยแคบ · Chunxi · IFS · Fuqin',sub:'พักหลังไฟลต์ · เดินเมือง · บุฟเฟต์หม่าล่า · ตลาดกลางคืน',notice:'ถึง TFU 02:00 ควรเตรียมห้องพักคืนก่อนหน้า พักถึงสายแล้วค่อยออก ร้านบุฟเฟต์และตลาดตรวจเวลาเปิดใน Amap วันจริง',route:'TFU → Chunxi (พัก) → 宽窄巷子 → 春熙路 → IFS 熊猫 → 董食汇自助火锅 → 抚琴夜市 → โรงแรม',stops:[
+        ['02:00','ถึง TFU / 天府国际机场','ผ่าน ตม. รับกระเป๋าและเรียกรถเข้าโรงแรม','成都天府国际机场'],
+        ['11:00','Kuanzhai Alley / 宽窄巷子','เดินซอยกว้าง ซอยแคบ และซอยบ่อน้ำ','成都 宽窄巷子'],
+        ['13:30','Chunxi Road / 春熙路','เดินถนนการค้าและถ่ายบรรยากาศกลางเมือง','成都 春熙路'],
+        ['15:00','IFS Panda / 成都国际金融中心','ถ่ายแพนด้าเกาะตึกและขึ้นดาดฟ้าตามทางเข้าห้างหากเปิด','成都 IFS 熊猫'],
+        ['17:00','บุฟเฟต์หม่าล่าแถว IFS','董食汇自助火锅 รายละเอียดและรูปอยู่ในหัวข้อร้านที่ควรไป','成都 董食汇自助火锅 IFS'],
+        ['19:30','Fuqin Night Market / 抚琴夜市','เดินตลาดและชิมของกินเล่นหลังบุฟเฟต์','成都 抚琴夜市']
+      ]},
+      {d:'28',dow:'เสาร์',kind:'self',title:'แพนด้าเช้า · Chengdu Art Museum บ่าย',sub:'แพนด้ารอบเช้า · พิพิธภัณฑ์ · แสงเย็น · Taode',notice:'ฐานแพนด้าฤดูหนาวเปิดรับรอบเช้า 08:00 จองตั๋วล่วงหน้า พิพิธภัณฑ์คือ 成都市天府美术馆 (A区) ตรวจนิทรรศการและการจองก่อนเดินทาง',route:'Chunxi → 熊猫基地西大门 → 成都市天府美术馆 A区 → 迎桂湖 → 陶德砂锅 → โรงแรม',stops:[
+        ['07:00','ออกจาก Chunxi','กินเช้าเร็วแล้วเรียก DiDi ไปประตูตามตั๋ว','成都 春熙路'],
+        ['08:00','Panda Base / 熊猫基地西大门','อยู่ถึงราว 11:30 เริ่มโซนที่อยากเห็นก่อน','成都大熊猫繁育研究基地 西大门'],
+        ['11:45','พักและกินมื้อกลางวัน','ใช้เวลาแบบยืดหยุ่นก่อนเดินทางต่อไปพิพิธภัณฑ์','成都大熊猫繁育研究基地'],
+        ['13:30','Chengdu Art Museum / 成都市天府美术馆','ชมอาคาร A และนิทรรศการราว 2–3 ชั่วโมง','成都市天府美术馆'],
+        ['17:15','แสงเย็นริม 迎桂湖','เดินชมอาคารพิพิธภัณฑ์และริมทะเลสาบ','成都 天府艺术公园'],
+        ['18:30','Taode Claypot / 陶德砂锅','ปลาต้มผักกาดดองและกุ้งกระเทียมบนวุ้นเส้น ดูรูปและชื่อจีนในหัวข้อร้านที่ควรไป','成都 陶德砂锅 花照壁店']
+      ]},
       {d:'29',dow:'อาทิตย์',kind:'tour',title:'ทัวร์ Bipenggou · ปี้เผิงโกว',sub:'รถรับโรงแรม · เที่ยวภูเขา 12:00–16:30 · พัก 1 คืน',notice:'ยึดใบโปรแกรมที่แนบ: จุดนัดหลักโซน Guangyuan 05:30–06:00, ออกจากเฉิงตู 06:30–07:00. คุณซื้อรถไปรับโรงแรมเพิ่ม 55 บาท/คนแล้ว—ให้ยืนยันเวลาจริงกับไกด์อีกครั้ง',route:'โรงแรม → 毕棚沟景区 Bipenggou → โรงแรมทัวร์ในเขต Aba (ชื่อโรงแรมต้องยืนยัน)',stops:[
         ['05:30','รถรับจากโรงแรม','เตรียมอาหารเช้า น้ำ พาสปอร์ต และเสื้อหนาว; เวลานี้ต้องรอไกด์ยืนยัน','成都 春熙路'],
         ['06:30','ออกจากเฉิงตู','เส้นทางขึ้นเขาอาจเปลี่ยนตามการปิดถนนและสภาพอากาศ','成都'],
@@ -137,49 +117,32 @@
         ['16:30','ออกจากอุทยาน','รวมตัวตามเวลาของไกด์ อย่าหลุดกลุ่ม','毕棚沟景区游客中心'],
         ['19:00','เช็กอิน + มื้อเย็น','ใบโปรแกรมระบุรวมมื้อเย็น 1 มื้อและโรงแรมมาตรฐาน 3 ดาว/เทียบเท่า','理县']
       ],tour:true},
-      {d:'30',dow:'จันทร์',kind:'tour',title:'ทัวร์ Shuangqiaogou · สี่ดรุณี',sub:'เที่ยว 10:30–15:30 · กลับ Jinke North Road 19:30–20:00',notice:'อาหารเช้าเป็น “ทานบนรถ” ตามใบโปรแกรม และมื้อที่รวมทั้งหมดในทัวร์มี 2 มื้อ (เย็นวันที่ 29 + เช้าวันที่ 30 ตามข้อความในภาพ) จึงไม่ใส่ชื่อร้านหรือเมนูเพิ่มเอง',route:'โรงแรมทัวร์ → 双桥沟景区 → จุดรวมรถ → 成都 金科北路',stops:[
+      {d:'30',dow:'จันทร์',kind:'tour',title:'ทัวร์ Shuangqiaogou · สี่ดรุณี',sub:'เที่ยว 10:30–15:30 · กลับ Jinke North Road 19:30–20:00',notice:'อาหารเช้าเป็น “ทานบนรถ” ตามใบโปรแกรม และมื้อที่รวมทั้งหมดในทัวร์มี 2 มื้อ (เย็นวันที่ 29 + เช้าวันที่ 30) ร้านอาหารหลังทัวร์เลือกจากหัวข้อร้านที่ควรไปตามเวลารถกลับ',route:'โรงแรมทัวร์ → 双桥沟景区 → 成都 金科北路',stops:[
         ['05:30','อาหารเช้าบนรถ','ทัวร์จัดให้; เตรียมของว่างสำรองสำหรับอากาศหนาว','四姑娘山'],
         ['10:30','Shuangqiaogou / 双桥沟','หุบเขาหลักของ Siguniang Mountain; ใช้รถชมวิวขึ้นแล้วค่อยแวะลงตามสภาพเปิดจริง','四姑娘山 双桥沟景区'],
         ['15:30','รวมตัวออกจากอุทยาน','กลับรถตรงเวลา เส้นทางภูเขาอาจล่าช้า','双桥沟景区游客中心'],
         ['19:30','ส่ง Jinke North Road / 金科北路','เวลาคาด 19:30–20:00; ถ้าเปลี่ยนจุด ไกด์จะแจ้ง','成都 金科北路']
       ],tour:true},
-      {d:'01',dow:'อังคาร',kind:'self',title:'博客楼 · Luodai Ancient Town · Dong’an Lake',sub:'สถาปัตยกรรมแคะ · เมืองเก่า · พระอาทิตย์ตกริมทะเลสาบ',notice:'“Boke Building” ตรวจยืนยันเป็น 洛带博客楼 ที่ 三峨街999号12栋 ใกล้ Luodai Ancient Town ไม่ใช่อาคารในใจกลางเฉิงตู วันนี้พื้นที่กว้างและข้ามเมืองไกล—ใช้ DiDi ทั้งวันจะคุมเวลาง่ายที่สุด',route:'Chunxi → 洛带博客楼 → 洛带古镇 (เดิน) → 东安湖公园 → Chunxi',stops:[
-        ['08:30','ออกจาก Chunxi','DiDi ประมาณ 45–70 นาทีตามรถติด; ขนส่งสาธารณะใช้เวลานานกว่า','成都 春熙路'],
-        ['09:45','Luodai Boke Building / 洛带博客楼','กลุ่มอาคารจีนหลายภูมิภาค เล่า 5 ระลอกการอพยพของชาวแคะ','成都 洛带博客楼'],
-        ['10:45','Luodai Ancient Town / 洛带古镇','广东会馆、湖广会馆、老街; เดินช้าๆ และชิมอาหารแคะ','成都 洛带古镇'],
-        ['13:45','ออกไป Dong’an Lake','DiDi ราว 35–55 นาที; อย่ารอให้มืดเพราะสวนกว้าง','成都 洛带古镇'],
-        ['15:00','Dong’an Lake / 东安湖公园','เดินริม湖, มุมสนามกีฬามหาวิทยาลัยโลก และชมแสงเย็น','成都 东安湖公园'],
-        ['18:00','กลับ Chunxi','เผื่อรถเย็น 60–90 นาที แล้วกินมื้อเย็นในเมือง','成都 春熙路']
-      ],food:[['มื้อเช้า · Chunxi','ก่อนออกฝั่งตะวันออก',...cityBreakfast],['มื้อกลางวัน · Luodai','อาหารแคะ/เสฉวนที่มีชื่อยืนยัน',
-        ['洛带供销社饭店','油烫鹅、面片汤 ห่านทอดน้ำมัน/ซุปแผ่นแป้ง','¥45–70','เผ็ด 0–1','A','สื่อท้องถิ่น Longquanyi เล่าประวัติ 60 ปีและเมนูเฉพาะ','洛带供销社饭店 洛带古镇景区店'],
-        ['蒲氏石磨豆花','石磨豆花、粉蒸牛肉 เต้าหู้โม่หิน/เนื้อนึ่งแป้ง','¥35–65','เผ็ด 0–1','A','หน่วยงาน/สื่อท้องถิ่นระบุเป็นหนึ่งในร้านอาหารแคะของ古镇','蒲氏石磨豆花 洛带镇下街店'],
-        ['伤心凉粉（洛带镇店）','伤心凉粉、黄凉粉 วุ้นถั่วเผ็ด/วุ้นเหลือง','¥12–25','เผ็ด 3','B','อาหารขึ้นชื่อของ Luodai; ร้านเก่าแต่ทำเลท่องเที่ยว—สั่ง微辣','伤心凉粉 洛带镇店']
-      ],['มื้อเย็น · กลับเมือง','ร้านชุมชน/อาหารเสฉวน',
-        ['秋金小炒','小炒菜 เมนูผัดไฟแรงประจำวัน','¥40–70','เผ็ด 2–3','B','ร้าน小炒ในเมือง; เช็กสาขาใกล้ Taikoo/Chunxi','成都 秋金小炒 春熙'],
-        ['荣园餐馆','家常川菜 อาหารเสฉวนบ้านๆ','¥45–75','เผ็ด 1–2','B','ถูกแนะนำในรายชื่ออาหารเฉิงตูโดยคนพื้นที่ปี 2026','成都 荣园餐馆'],
-        ['明婷小馆','奇香排骨、脑花豆腐','¥50–80','เผ็ด 2–3','B','เก่าแก่และรสท้องถิ่น แม้ปัจจุบันมีชื่อเสียงวงกว้าง','成都 明婷小馆']
-      ]]},
-      {d:'02',dow:'พุธ',kind:'self',title:'Wenshu Monastery · ของฝาก · TFU',sub:'เช้าสงบ · ช้อป Chunxi/Taikoo Li · ออกสนามบิน 16:15',notice:'ไฟลต์ 20:30 แนะนำถึง TFU 17:30–18:00 สำหรับเที่ยวบินระหว่างประเทศ ออกจาก Chunxi ไม่เกิน 16:15 ด้วย DiDi; ถ้า Metro ให้เผื่อมากกว่าและตรวจเวลาเดินทางในวันจริง',route:'Chunxi → 文殊院 → 春熙路/太古里 → โรงแรมรับกระเป๋า → 天府国际机场 T1/T2 ตามตั๋ว',stops:[
-        ['08:30','Wenshu Monastery / 文殊院','วัดพุทธสำคัญ บรรยากาศเช้าเงียบกว่า แต่งกายสุภาพและไม่รบกวนพิธี','成都 文殊院'],
-        ['10:15','Wenshufang / 文殊坊','ของกินเช้า ขนมเก่า และตรอกใกล้วัด','成都 文殊坊'],
-        ['11:45','Chunxi Road / 春熙路','ซื้อของฝากร้านทางการ/ห้าง เก็บใบเสร็จและชั่งน้ำหนัก','成都 春熙路'],
-        ['13:30','Taikoo Li / 成都远洋太古里','เดินโซน Daci Temple และมื้อก่อนสนามบิน','成都 太古里'],
-        ['15:45','กลับโรงแรม','รับกระเป๋า เข้าห้องน้ำ ชาร์จมือถือ เรียกรถ','成都 春熙路'],
-        ['16:15','ออกไป TFU','DiDi ราว 60–90 นาทีตามรถติด; ยืนยัน Terminal จากตั๋ว','成都天府国际机场'],
-        ['17:45','ถึงสนามบิน','เช็กอิน ตม. security และขึ้นเครื่อง 20:30','成都天府国际机场']
-      ],food:[['มื้อเช้า · Wenshu','สามระดับจากอิ่มเร็วถึงมังสวิรัติ',
-        ['洞子口张老二凉粉','甜水面、黄凉粉 เส้นหวานเผ็ด/วุ้นถั่วเหลือง','¥12–25','เผ็ด 1–2','A','ร้านเก่าแก่ร้อยปีและราคาที่คนเมืองเข้าถึงได้','成都 洞子口张老二凉粉 文殊院'],
-        ['严太婆锅魁（文殊院店）','锅魁夹肉 แป้งอบไส้หมู','¥10–20','เผ็ด 0–2','B','ของกินเช้า/ของว่างแบบเฉิงตู; ตรวจสาขา文殊院ใน Amap','成都 严太婆锅魁 文殊院店'],
-        ['香园（文殊院）','素斋、茶泡饭 อาหารเจ/ข้าวชา','¥20–75','เผ็ด 0','B','อยู่ในโซนวัด เหมาะคนไม่กินเผ็ด; เมนูบางอย่างราคาสูงกว่า小吃','成都 文殊院 香园']
-      ],['มื้อกลางวัน · Chunxi/Taikoo','ก่อนช้อปช่วงสุดท้าย',...cityDinner],['มื้อก่อนสนามบิน · 15:00','กินเบาและจบภายใน 45 นาที',
-        ['71号豆汤饭','豆汤饭 ข้าวซุปถั่ว อิ่มเร็ว','¥18–30','เผ็ด 0–1','A','ร้านมื้อเร็วจากรายชื่อท้องถิ่นปัจจุบัน','成都 71号豆汤饭'],
-        ['华兴煎蛋面（总店）','番茄煎蛋面 เส้นมะเขือเทศไข่ดาว','¥15–25','เผ็ด 0–1','B','อาหารจานเดียว คุมเวลาได้ง่าย','成都 华兴煎蛋面 总店'],
-        ['盘飧市（华兴街店）','卤味拼盘 + 锅魁 ชุดของพะโล้/กัวขุย','¥25–45','เผ็ด 0–1','B','ซื้อกลับได้บางรายการ; เช็กข้อกำหนดนำของเหลวขึ้นเครื่อง','成都 盘飧市 华兴街店']
-      ]]}
-    ];
-    [days[0],days[1]]=[
-      {...days[1],d:'27',dow:'ศุกร์',plan:'28',notice:'ถึง TFU วันที่ 27 เวลา 02:00 แล้วเข้าโรงแรมแถว Chunxi Road ก่อน แพลน Panda Base เช้าวันเดียวกันจึงมีเวลาพักน้อย ควรเตรียมเช็กอินและรถรับส่งล่วงหน้า; ฐานแพนด้าเปิดรอบเช้า 08:00–12:00 และจองล่วงหน้าได้ 14 วัน',stops:[['02:00','ถึง TFU / 天府国际机场','รับกระเป๋า + ตม. แล้วเรียก DiDi หรือใช้รถสนามบินไปโรงแรม; ช่วงนี้ Metro ยังไม่ใช่ตัวเลือกหลัก','成都天府国际机场'],['03:30','ถึงโรงแรมแถว Chunxi Road','เช็กอิน พัก และเตรียมอาหารเช้าแบบซื้อกลับ','成都 春熙路'],...days[1].stops]},
-      {...days[0],d:'28',dow:'เสาร์',plan:'27',notice:'ออกจากที่พักแถว Chunxi Road ราว 09:30 แล้วต่อ Metro และ C-train ไป Dujiangyan เช็กขบวนจริงใน 12306 ก่อนออก; จุดชม “Blue Tears” คือแสงประดับสะท้อนน้ำและอาจงดเปิดบางคืน',stops:[['09:30','ออกจากโรงแรม + brunch แถว Chunxi','เตรียมเสื้อกันลมและออกเดินทางโดยไม่เร่งช่วงเช้า','成都 春熙路'],...days[0].stops.slice(2)]}
+      {d:'01',dow:'อังคาร',kind:'self',title:'ตูเจียงเยี่ยนเต็มวัน · เมืองเก่า · สะพานหนานเฉียว',sub:'ระบบชลประทาน · 乐以里 บะหมี่หวาน · ไฟริมแม่น้ำ',notice:'เผื่อเวลารถไฟ 犀浦 → 离堆公园 และบันไดในเส้นทาง城隍庙 ตรวจเวลาปิด景区วันจริง พยายามออกจากเขตระบบน้ำก่อน 17:30 ไฟ南桥เป็นพื้นที่ภายนอก',route:'Chunxi → 犀浦 → 离堆公园 → 灌县古城/乐以里 → 城隍庙 → 二王庙 → 安澜索桥 → ระบบน้ำ → 南桥 → กลับ',stops:[
+        ['08:00','ออกจาก Chunxi ไป Xipu / 犀浦','Metro สาย 2 แล้วต่อ C-train ตรวจขบวนใน 12306','成都 犀浦站'],
+        ['09:45','Lidui Park / 离堆公园','จากสถานีเดินเข้าเมืองเก่า','都江堰 离堆公园站'],
+        ['10:00','Guanxian Ancient Town / 灌县古城','เดินกำแพงเมือง ตรอกเก่า และจุดขึ้นภูเขา','都江堰 灌县古城'],
+        ['11:30','Leyili / 乐以里·小饺子','สั่ง 甜水面 บะหมี่หวานและ小饺子 เกี๊ยวตัวเล็ก','都江堰 乐以里 小饺子 曾家巷26号'],
+        ['12:30','Chenghuang Temple / 城隍庙','ทางเดินมีบันได ใช้เวลาตามกำลัง','都江堰 城隍庙'],
+        ['13:30','Erwang Temple / 二王庙','ชมมุมสูงและเรื่องเล่าหลี่ปิง','都江堰 二王庙'],
+        ['14:30','Anlan Bridge / 安澜索桥','สะพานแขวนข้ามแม่น้ำใกล้ระบบชลประทาน','都江堰 安澜索桥'],
+        ['15:00','Dujiangyan Irrigation System / 水利工程','鱼嘴 → 飞沙堰 → 宝瓶口 ปรับตามทางออกจริง','都江堰 鱼嘴分水堤'],
+        ['18:15','Nanqiao / 南桥','ชมไฟและเงาสะท้อนน้ำหลังพระอาทิตย์ตกแล้วกลับเฉิงตู','都江堰 南桥']
+      ]},
+      {d:'02',dow:'พุธ',kind:'self',title:'วัดเหวินซู · ซื้อของฝากในเมือง · TFU',sub:'เดินสบาย ๆ แถววัดและ Chunxi/Taikoo Li · ออกสนามบิน 16:15',notice:'วันนี้อยู่ในเมืองเพื่อไม่เร่งก่อนเที่ยวบิน 20:30 ซื้อของฝากที่ Wenshufang, Chunxi และ Taikoo Li ตามกำลัง กลับรับกระเป๋าแล้วออกจากโรงแรมไม่เกิน 16:15',route:'Chunxi → 文殊院/文殊坊 → 春熙路 → 太古里 → โรงแรมรับกระเป๋า → TFU',stops:[
+        ['08:30','Wenshu Monastery / 文殊院','เดินชมวัดอย่างสบาย ๆ ประมาณ 1–1.5 ชั่วโมง','成都 文殊院'],
+        ['10:00','Wenshufang / 文殊坊','เดินตรอกใกล้วัด เลือกขนมและของฝาก','成都 文殊坊'],
+        ['11:30','Chunxi Road / 春熙路','ซื้อของฝากในห้างและแวะร้านชานม/ทาร์ตไข่จากหัวข้อร้านที่ควรไป','成都 春熙路'],
+        ['13:00','Taikoo Li / 太古里','มื้อกลางวันหรือแวะร้านเบเกอรี่ แล้วซื้อของช่วงสั้น ๆ','成都 太古里'],
+        ['15:30','กลับโรงแรมรับกระเป๋า','เตรียมเอกสารและตรวจ terminal ในตั๋ว','成都 春熙路'],
+        ['16:15','ออกไป TFU','DiDi เผื่อรถติดราว 60–90 นาที','成都天府国际机场'],
+        ['17:45','ถึงสนามบิน','เช็กอิน ตม. และขึ้นเที่ยวบิน 20:30','成都天府国际机场']
+      ]}
     ];
     const placePhotos=['https://www.panda.org.cn/public/upload/2023/08/03/1691052162.jpg','https://www.oct-cts.com/images/up_scenery/UploadImage/40528/largeImg/20220217052819b3-8c6.jpg','https://www.islamichinatravel.com/wp-content/uploads/2024/09/Chengdu-Panda-Base-1020a.jpg','https://ak-d.tripcdn.com/images/0102z1200093cw25v92A0_D_1180_558.jpg','https://www.chinadiscovery.com/assets/images/chengdu/things-to-do/luodai-768-1.jpg','https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80'];
     function placeImage(s,i){const t=(s[1]+' '+s[3]).toLowerCase();if(/panda|熊猫基地/.test(t))return placePhotos[2];if(/bipeng|毕棚/.test(t))return placePhotos[1];if(/shuangqiao|四姑娘|双桥/.test(t))return placePhotos[3];if(/luodai|洛带|博客楼/.test(t))return placePhotos[4];if(/dujiangyan|都江堰|南桥|anlan|安澜|二王|鱼嘴|灌县/.test(t))return placePhotos[5];if(/wenshu|文殊|太古里|春熙/.test(t))return placePhotos[6];return placePhotos[i%placePhotos.length]}
@@ -187,6 +150,7 @@
     const gallery=(title,source,files)=>({title,source,images:files.map(file=>file.startsWith('http')||file.startsWith('assets/')?file:commons(file))});
     const galleries={
       '都江堰 灌县古城':gallery('Guanxian Ancient Town','https://commons.wikimedia.org/wiki/Category:Dujiangyan',['20260907 Dujiangyan National Park image 1.jpg','20260907 Dujiangyan National Park image 10.jpg','20260907 Dujiangyan National Park image 11.jpg','20260907 Dujiangyan National Park image 12.jpg','20260907 Dujiangyan National Park image 13.jpg','20260907 Dujiangyan National Park image 14.jpg']),
+      '都江堰 城隍庙':gallery('Chenghuang Temple','https://commons.wikimedia.org/wiki/File:%E7%81%8C%E5%8F%A3%E5%9F%8E%E9%9A%8D%E5%BA%99.JPG',['灌口城隍庙.JPG']),
       '都江堰 二王庙':gallery('Erwang Temple','https://commons.wikimedia.org/wiki/Category:Erwang_Temple',['Chengdu travel 093 (36150481426).jpg','Chengdu travel 094 (35354827954).jpg','Erwang Temple - 2024.jpg','二王庙.jpg','二王庙内殿.jpg','都江堰景区之二王庙.jpg']),
       '都江堰 安澜索桥':gallery('Anlan Suspension Bridge','https://commons.wikimedia.org/wiki/Category:Anlan_Suspension_Bridge',['https://images.mindtrip.ai/attractions/3be2/5f24/d7f4/ea46/7d94/8c31/3a20/8b37','https://pic5.40017.cn/03/000/b5/c3/rB5oQFxU8JaADHuHAAG0J6WHvYo229_800x475_00.jpg','https://www.travelchinaguide.com/images/photogallery/0010500/dujiangyan%2010010050tm.jpg','https://media-cdn.tripadvisor.com/media/photo-s/0e/9b/bf/5a/caption.jpg','https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/18/55/57/anlan-bridge.jpg?h=400&s=1&w=700','https://dimg04.c-ctrip.com/images/0101h12000a8dms0aE979_W_640_10000.jpg?proc=autoorient']),
       '都江堰 鱼嘴分水堤':gallery('Dujiangyan Irrigation System','https://commons.wikimedia.org/wiki/Category:Dujiangyan',['20260907 Dujiangyan National Park image 1.jpg','20260907 Dujiangyan National Park image 10.jpg','20260907 Dujiangyan National Park image 11.jpg','20260907 Dujiangyan National Park image 12.jpg','20260907 Dujiangyan National Park image 13.jpg','20260907 Dujiangyan National Park image 14.jpg']),
@@ -200,64 +164,50 @@
       '成都 洛带博客楼':gallery('Luodai Boke Building','https://commons.wikimedia.org/wiki/Category:Luodai',['assets/luodai-boke-building-cover.png','Luodai-01.jpg','Luodai-03.jpg','Luodai-05.jpg','Luodai-07.jpg','Luodai-11.jpg']),
       '成都 洛带古镇':gallery('Luodai Ancient Town','https://commons.wikimedia.org/wiki/Category:Luodai',['Luodai-01.jpg','Luodai-02.jpg','Luodai-03.jpg','Luodai-04.jpg','Luodai-06.jpg','洛带古镇五凤楼 (4140976731).jpg']),
       '成都 东安湖公园':gallery('Dong’an Lake Park','https://www.newslqy.com/video/299741',['https://img-cdn.newslqy.com/catchimages/20250804/1754290457501079193.jpg?x-image-process=image%2Fquality%2Cq_95','https://architizer-prod.imgix.net/media/mediadata/uploads/1682579276865Aerial_view_Dongan_Lake_Sports_Park__Yiwei_Studio.jpg','https://dimg04.c-ctrip.com/images/0103f12000exkgc8v3005_W_750_0.jpg?proc=autoorient','https://newbbs-fd.zol-img.com.cn/t_s1200x5000/g7/M00/03/0A/ChMkLGPUys6IFb-qAAQ3vwwzj1wAAMNuAPOwEYABDfX650.jpg','https://imgcdn.scol.com.cn/NEWS_1C9BA4A1D1A71D7413DF540EEE462749.JPG','https://p26.toutiaoimg.com/origin/tos-cn-i-qvj2lq49k0/052a386c9ac44737a36110643fb6f9f7?from=pc']),
+      '成都 文殊坊':gallery('Wenshufang','https://commons.wikimedia.org/wiki/Category:Wenshu_Monastery',['Wenshu Monastery - panoramio (2).jpg','成都 文殊院 - panoramio (3).jpg']),
       '成都 文殊院':gallery('Wenshu Monastery','https://commons.wikimedia.org/wiki/Category:Wenshu_Monastery',['文殊院 (雪景).jpg','Great hall - Wenshu Monastery - Chengdu, China - DSC05105.jpg','Great hall - Wenshu Monastery - Chengdu, China - DSC05111.jpg','Wenshu Monastery - panoramio (2).jpg','成都 文殊院 - panoramio (3).jpg','Thousand Buddha Pagoda - Wenshu Monastery - Chengdu, China - DSC05010.jpg']),
+      '成都 宽窄巷子':gallery('Kuanzhai Alley','https://commons.wikimedia.org/wiki/Category:Wide_and_Narrow_Alleys',['Wide and Narrow Alleys (53691068061).jpg','Street scene - Kuanzhai Alleys - Chengdu, China - DSC05311.jpg','Kuanzhaixiangzi Alleys, 201907, 01.jpg','Shops - Kuanzhai Alleys - Chengdu, China - DSC05305.jpg']),
+      '成都 IFS 熊猫':gallery('IFS Panda','https://commons.wikimedia.org/wiki/Category:Chengdu_IFS',['The panda at IFS Chengdu.jpg','IFS Chengdu Tower and I AM HERE Panda Statue.jpg','20260908 "I Am Here" giant panda sculpture.jpg','I Am Here - Panda Art at IFS Building, Chengdu.jpg']),
+      '成都 抚琴夜市':gallery('Fuqin Night Market','https://gs.ctrip.com/html5/you/sight/chengdu104/143177151.html',['https://dimg04.c-ctrip.com/images/1me4i12000ra6ea1cD500.jpg?proc=source%2Ftripcommunity','https://n.sinaimg.cn/spider20261003/433/w1700h1133/20261003/1c04-174a31010e1d63ec3dbc0c3b65a61afb.jpg']),
       '成都 春熙路':gallery('Chunxi Road','https://commons.wikimedia.org/wiki/Category:Chunxi_Road',['Chunxi Road 2025 1.jpg','Chunxi Road 2025 2.jpg','Chunxi Road 2025 3.jpg','Chunxi Road 2025 4.jpg','Chunxi Road seen from viaduct, Chengdu.jpg','North entrance of Chunxi Road (20180218202158).jpg']),
       '成都 太古里':gallery('Taikoo Li Chengdu','https://commons.wikimedia.org/wiki/Category:Sino-Ocean_Taikoo_Li_Chengdu',['Sino-Ocean Taikoo Li Chengdu 1.jpg','Sino-Ocean Taikoo Li Chengdu 2.jpg','Sino-Ocean Taikoo Li Chengdu 5.jpg','Sino-Ocean Taikoo Li Chengdu 9.jpg','Taikoo Li Chengdu skyline.jpg','成都远洋太古里内景.jpg'])
     };
     const attractionsByDay={
-      '27':['都江堰 灌县古城','都江堰 二王庙','都江堰 安澜索桥','都江堰 鱼嘴分水堤','都江堰 南桥'],
+      '27':['成都 宽窄巷子','成都 春熙路','成都 IFS 熊猫','成都 抚琴夜市'],
       '28':['成都大熊猫繁育研究基地 西大门','成都市天府美术馆','成都 天府艺术公园'],
       '29':['毕棚沟景区'],
       '30':['四姑娘山 双桥沟景区'],
-      '01':['成都 洛带博客楼','成都 洛带古镇','成都 东安湖公园'],
-      '02':['成都 文殊院','成都 春熙路','成都 太古里']
+      '01':['都江堰 灌县古城','都江堰 城隍庙','都江堰 二王庙','都江堰 安澜索桥','都江堰 鱼嘴分水堤','都江堰 南桥'],
+      '02':['成都 文殊院','成都 文殊坊','成都 春熙路','成都 太古里']
     };
-    const planKey=(d)=>d.plan||d.d;
+    const planKey=(d)=>d.d;
     const attractionStops=(d)=>attractionsByDay[planKey(d)].map(query=>{const stop=d.stops.find(s=>(s[3]||s[1])===query);return {query,stop}}).filter(item=>item.stop);
     const travelLegsByDay={
-      '27':{
-        '都江堰 灌县古城':'จาก Chunxi Road ขึ้น Metro สาย 2 ไปสุดสายที่ 犀浦站 (Xipu) → ต่อรถไฟ C-train ไป 离堆公园站 (Lidui Park) → เดินเข้าเมืองเก่าประมาณ 8–12 นาที',
-        '都江堰 二王庙':'จากเมืองเก่าเดินเข้าประตู Yulei Mountain แล้วขึ้นตามทางในอุทยาน ประมาณ 25–35 นาที; ถ้าเปิดรถชมวิวให้ใช้เพื่อลดแรง',
-        '都江堰 安澜索桥':'เดินจาก Erwang Temple ตามป้าย 安澜索桥 ประมาณ 10–15 นาที',
-        '都江堰 鱼嘴分水堤':'ข้าม Anlan Bridge แล้วเดินตามแกน景区ไป Yuzui ประมาณ 10–20 นาที',
-        '都江堰 南桥':'ออกจากโซนระบบน้ำทางประตูใกล้เมือง แล้วเดินหรือใช้รถชมวิวต่อเข้า Nanqiao ประมาณ 25–40 นาที'
-      },
-      '28':{
-        '成都大熊猫繁育研究基地 西大门':'จาก Chunxi เรียก DiDi ไป西大门ประมาณ 35–55 นาที; ทางเลือกคือ Metro สาย 3 ไป 熊猫大道站 แล้วต่อรถรับส่งหรือแท็กซี่',
-        '成都市天府美术馆':'จาก Panda Base เรียก DiDi ไป 成都市天府美术馆 (A区) ประมาณ 35–50 นาที',
-        '成都 天府艺术公园':'ออกจากพิพิธภัณฑ์แล้วเดินเข้าสวนและริม湖ประมาณ 5 นาที'
-      },
-      '29':{'毕棚沟景区':'รถทัวร์รับจากโรงแรมในเฉิงตู → แวะ Li County → เข้าศูนย์นักท่องเที่ยว Bipenggou; ใช้รถชมวิวภายในตามบัตรและการเปิดจริง'},
-      '30':{'四姑娘山 双桥沟景区':'ออกจากโรงแรมทัวร์ด้วยรถคณะ → ศูนย์นักท่องเที่ยว Shuangqiaogou → ต่อรถชมวิวของอุทยาน และกลับรถตามเวลานัด'},
-      '01':{
-        '成都 洛带博客楼':'จาก Chunxi เรียก DiDi ตรงไป 洛带博客楼 ประมาณ 45–70 นาที; รถสาธารณะใช้เวลานานและต้องต่อหลายช่วง',
-        '成都 洛带古镇':'เดินจาก Boke Building ไปย่านเมืองเก่าประมาณ 10 นาที',
-        '成都 东安湖公园':'จาก Luodai เรียก DiDi ไป East Lake Park ประมาณ 35–55 นาที'
-      },
-      '02':{
-        '成都 文殊院':'จาก Chunxi Road ขึ้น Metro สาย 2 ไป 天府广场 → เปลี่ยนเป็นสาย 1 ลง 文殊院站 แล้วเดินต่อประมาณ 5–10 นาที',
-        '成都 春熙路':'จาก Wenshu Monastery ขึ้น Metro สาย 1 ไป 天府广场 → เปลี่ยนสาย 2 กลับ 春熙路站',
-        '成都 太古里':'จาก Chunxi Road เดินเข้าทางเชื่อม IFS–Taikoo Li ประมาณ 8–12 นาที'
-      }
+      '27':{'成都 宽窄巷子':'หลังพัก เรียก DiDi จาก Chunxi ประมาณ 15–25 นาที หรือ Metro สาย 2 ไป 人民公园 แล้วเดิน','成都 春熙路':'จาก 宽窄巷子 กลับด้วย Metro สาย 2 จาก 人民公园 ไป 春熙路 หรือ DiDi ประมาณ 15–25 นาที','成都 IFS 熊猫':'เดินจาก Chunxi Road ราว 5–10 นาที','成都 抚琴夜市':'จาก IFS เรียก DiDi ราว 20–30 นาที; กลับโรงแรมด้วย DiDi/Metro หากยังให้บริการ'},
+      '28':{'成都大熊猫繁育研究基地 西大门':'DiDi จาก Chunxi ราว 35–55 นาที; ทางเลือก Metro สาย 3 ไป 军区总医院 แล้วต่อรถรับส่ง 409 ไป西大门','成都市天府美术馆':'จาก Panda Base เรียก DiDi ไป A区 ราว 35–50 นาที','成都 天府艺术公园':'ออกจากพิพิธภัณฑ์เดินไปริม迎桂湖ไม่กี่นาที'},
+      '29':{'毕棚沟景区':'รถทัวร์รับจากโรงแรม → แวะ Li County → เข้าศูนย์นักท่องเที่ยว Bipenggou; ใช้รถชมวิวภายในตามบัตรและการเปิดจริง'},
+      '30':{'四姑娘山 双桥沟景区':'รถทัวร์จากโรงแรม → ศูนย์นักท่องเที่ยว Shuangqiaogou → รถชมวิวภายใน แล้วกลับตามเวลานัด'},
+      '01':{'都江堰 灌县古城':'Metro 2 จาก Chunxi ไป 犀浦 → C-train ไป 离堆公园 → เดิน 8–12 นาที','都江堰 城隍庙':'เดินจากเมืองเก่าขึ้นเนินและบันไดประมาณ 15–25 นาที','都江堰 二王庙':'ต่อจาก Chenghuang ตามป้ายในพื้นที่ ประมาณ 20–30 นาที; ปรับตามทางเข้า/ตั๋ว','都江堰 安澜索桥':'เดินจาก Erwang Temple ตามป้ายประมาณ 10–15 นาที','都江堰 鱼嘴分水堤':'ข้ามสะพานแล้วเดินไป鱼嘴และจุดระบบน้ำราว 10–20 นาที','都江堰 南桥':'ออกเขต景区ทางเมืองเก่า เดิน/รถชมวิวราว 25–40 นาที'},
+      '02':{'成都 文殊院':'จาก Chunxi Road ขึ้น Metro สาย 2 ไป天府广场 ต่อสาย 1 ลง文殊院 แล้วเดิน 5–10 นาที','成都 文殊坊':'ออกจากวัดเดินเข้าตรอกติดกันประมาณ 3–5 นาที','成都 春熙路':'จาก文殊院站 นั่ง Metro สาย 1 ต่อสาย 2 ที่天府广场 ลง春熙路','成都 太古里':'เดินจาก Chunxi/IFS ประมาณ 8–12 นาที'}
     };
     const attractionCard=({query,stop},d)=>`<article class="attraction-card" data-place="${query}"><img class="place-thumb" src="${galleries[query].images[0]}" alt="${galleries[query].title}" loading="lazy"><div><div class="time">${stop[0]}</div><h5>${stop[1]} <small class="english">${english(query)}</small></h5><div class="travel-to-place"><b>ไปจากจุดก่อนหน้า</b><span>${travelLegsByDay[planKey(d)][query]}</span></div><p>${stop[2]}</p><button type="button" class="place-open" data-place="${query}">ดูรูปและไฮไลต์</button></div></article>`;
-    const mapPositions={1:[[50,52]],2:[[20,65],[80,35]],3:[[14,70],[50,28],[86,62]],4:[[12,70],[36,28],[62,68],[88,34]],5:[[10,72],[29,32],[49,66],[70,27],[90,58]]};
+    const mapPositions={1:[[50,52]],2:[[20,65],[80,35]],3:[[14,70],[50,28],[86,62]],4:[[12,70],[36,28],[62,68],[88,34]],5:[[10,72],[29,32],[49,66],[70,27],[90,58]],6:[[8,72],[24,28],[40,67],[57,26],[74,65],[91,30]]};
     const routeGraphic=(d)=>{const nodes=attractionStops(d),points=mapPositions[nodes.length],path=points.length>1?`<path d="${points.map((p,i)=>`${i?'L':'M'} ${p[0]} ${p[1]}`).join(' ')}"/>`:'';return `<div class="route-graphic"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${path}</svg>${nodes.map(({query,stop},i)=>{const label=stop[1].split('/')[0].split('·')[0].trim();return `<div class="route-pin" style="--x:${points[i][0]}%;--y:${points[i][1]}%"><button type="button" class="place-open" data-place="${query}" aria-label="${i+1}. ${label}"><span class="route-pin-media"><img src="${galleries[query].images[0]}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${placeImage(stop,i)}'"><span class="route-pin-number">${i+1}</span></span><small>${label}</small></button></div>`}).join('')}</div>`};
     const transportByDay={
-      '27':'Metro จาก Chunxi ไป Xipu (犀浦) แล้วต่อ C-train ไป Lidui Park (离堆公园). เช็กขบวนจริงใน 12306 ก่อนออก และเผื่อเวลาเปลี่ยนระบบรถไฟ.',
-      '28':'เรียก DiDi ไปประตูตะวันตกของ Panda Base ตอนเช้า จากนั้นต่อ DiDi ไป Tianfu Art Park. ค้นชื่อจีนใน Amap ทุกครั้งเพื่อเลี่ยงลงผิดประตู.',
-      '29':'รถทัวร์รับจากโรงแรมตามใบจอง. คืนก่อนเดินทางให้ยืนยันเวลา จุดรับ ทะเบียนรถ และเบอร์ไกด์ใน WeChat.',
-      '30':'เดินทางด้วยรถทัวร์ตลอดวันและกลับลงที่ Jinke North Road. อย่าแยกจากกลุ่ม และยึดเวลารวมตัวของไกด์เหนือเวลาในแผน.',
-      '01':'เส้นทางข้ามเมืองและจุดหมายอยู่นอกแนว Metro—ใช้ DiDi ระหว่าง Chunxi, Luodai และ Dong’an Lake จะคุมเวลาได้ง่ายกว่า.',
-      '02':'ใช้ Metro หรือ DiDi ไป Wenshu ตอนเช้า กลับรับกระเป๋าที่ Chunxi แล้วเรียก DiDi ไป TFU ไม่เกิน 16:15; ยืนยัน Terminal จากตั๋ว.'
+      '27':'พักหลังถึงสนามบินตอนตีสอง ใช้ Metro/DiDi ระหว่าง Kuanzhai กับ Chunxi–IFS แล้วเรียก DiDi ไป Fuqin ตอนค่ำ.',
+      '28':'DiDi ไปประตูตะวันตก Panda Base และต่อ DiDi ไปพิพิธภัณฑ์ A区; หลังชมแสงเย็นไปร้าน陶德砂锅สาขา花照壁.',
+      '29':'รถทัวร์รับจากโรงแรมตามใบจอง ยืนยันเวลา จุดรับ ทะเบียนรถ และเบอร์ไกด์ใน WeChat.',
+      '30':'รถทัวร์กลับ Jinke North Road ราว 19:30–20:00; เลือกมื้อเย็นจากหัวข้อร้านที่ควรไปตามเวลารถกลับจริง.',
+      '01':'Metro 2 จาก Chunxi ไป Xipu แล้วต่อ C-train ไป Lidui Park; เดินในเมืองเก่าและ景区 ตรวจขบวนกลับใน 12306.',
+      '02':'Metro ไป Wenshu และกลับ Chunxi; เดินต่อ Taikoo Li จากนั้นรับกระเป๋าและออก TFU ภายใน 16:15.'
     };
     const transportLabels={
-      '27':['Metro สาย 2','C-train 犀浦 → 离堆公园','เดินในอุทยาน'],
-      '28':['DiDi','ทางเลือก Metro สาย 3','เดิน 5 นาที'],
+      '27':['Metro/DiDi','เดิน Chunxi–IFS','DiDi ไป Fuqin'],
+      '28':['DiDi','เดินพิพิธภัณฑ์–ริม湖'],
       '29':['รถทัวร์','รถชมวิวอุทยาน'],
-      '30':['รถทัวร์','รถชมวิวอุทยาน'],
-      '01':['DiDi','เดินใน Luodai'],
-      '02':['Metro สาย 2','Metro สาย 1','เดิน Chunxi–Taikoo Li','DiDi ไป TFU']
+      '30':['รถทัวร์','DiDi ถ้าไป蟹叁宝'],
+      '01':['Metro สาย 2','C-train 犀浦 → 离堆公园','เดินในอุทยาน'],
+      '02':['Metro สาย 1/2','เดิน Chunxi–Taikoo Li','DiDi ไป TFU']
     };
     function render(){
       document.getElementById('days').innerHTML=days.map((d,i)=>`<details class="day" data-kind="${d.kind}" ${i===0?'open':''}>
@@ -267,7 +217,7 @@
           <div class="day-brief" aria-label="สรุปวันนี้"><div class="brief-item"><small>${d.d==='27'?'ถึง TFU':'ออกจากที่พัก'}</small><strong>${d.stops[0][0]}</strong></div><div class="brief-item"><small>จบทริปวันนี้</small><strong>${d.stops.at(-1)[0]}</strong></div><div class="brief-item"><small>ที่เที่ยว</small><strong>${attractionStops(d).length} แห่ง · ${d.kind==='tour'?'ไปกับทัวร์':'เที่ยวเอง'}</strong></div></div>
           <section class="travel-panel"><div class="day-section-title"><h4>แผนที่เส้นทางวันนี้</h4><p>หมุดเรียงตามลำดับจริง · แผนภาพไม่อิงมาตราส่วน</p></div><div class="routebox map-card"><div class="map-caption"><b>${d.title}</b><small>${attractionStops(d).length} ที่เที่ยว</small></div>${routeGraphic(d)}</div><div class="metro"><b>ภาพรวมการเดินทาง</b><p>${transportByDay[planKey(d)]}</p><div class="metro-lines">${transportLabels[planKey(d)].map(label=>`<span class="metro-line">${label}</span>`).join('')}</div></div></section>
           <section class="day-section"><div class="day-section-title"><h4>ไทม์ไลน์ที่เที่ยว</h4><p>แต่ละจุดมีวิธีเดินทางจากจุดก่อนหน้า</p></div><div class="place-list">${attractionStops(d).map(item=>attractionCard(item,d)).join('')}</div></section>
-          ${d.tour?`<div class="tour-grid"><div class="cost"><small>ค่าทัวร์ / คน</small><strong>฿3,610</strong><span>รวมรถ + ที่พัก 1 คืน + อาหาร 2 มื้อ + ประกันตามใบโปรแกรม</span></div><div class="cost"><small>จ่ายเพิ่ม / คน</small><strong>¥200 + ฿55</strong><span>Siguniang ¥70 + Bipenggou ¥70 + รถภายใน 2 จุดรวม ¥60; รถรับโรงแรม ฿55</span></div></div>`:meals(d.food)}
+          ${d.tour?`<div class="tour-grid"><div class="cost"><small>ค่าทัวร์ / คน</small><strong>฿3,610</strong><span>รวมรถ + ที่พัก 1 คืน + อาหาร 2 มื้อ + ประกันตามใบโปรแกรม</span></div><div class="cost"><small>จ่ายเพิ่ม / คน</small><strong>¥200 + ฿55</strong><span>Siguniang ¥70 + Bipenggou ¥70 + รถภายใน 2 จุดรวม ¥60; รถรับโรงแรม ฿55</span></div></div>`:''}
         </div>
       </details>`).join('');
     }
@@ -277,6 +227,7 @@
     }
     render();
     renderPlacesIndex();
+    renderFoodGuide();
     document.querySelectorAll('.attraction-card').forEach((card,index)=>{
       const img=card.querySelector('img'), hasGallery=Boolean(galleries[card.dataset.place]);
       const marker=()=>{const node=document.createElement('div');node.className='no-photo';node.innerHTML=`<span>${String(index+1).padStart(2,'0')}</span><small>FIELD NOTE</small>`;img.replaceWith(node)};
@@ -296,11 +247,11 @@
     document.getElementById('back-plan').addEventListener('click',()=>{if(history.state?.place)history.back();else{closePlace();history.replaceState(null,'','#plan')}});
     window.addEventListener('popstate',event=>{if(event.state?.place)openPlace(event.state.place,{push:false});else closePlace()});
     let currentView='plan';
-    function setTripView(view,{updateHash=true}={}){currentView=view;document.querySelectorAll('.trip-tab').forEach(tab=>{const active=tab.dataset.view===view;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active))});document.getElementById('plan-panel').hidden=view!=='plan';document.getElementById('places-panel').hidden=view!=='places';if(updateHash)history.replaceState(null,'',view==='places'?'#places':'#plan');window.scrollTo(0,document.getElementById('plan').offsetTop)}
+    function setTripView(view,{updateHash=true}={}){currentView=view;document.querySelectorAll('.trip-tab').forEach(tab=>{const active=tab.dataset.view===view;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active))});document.getElementById('plan-panel').hidden=view!=='plan';document.getElementById('places-panel').hidden=view!=='places';document.getElementById('food-panel').hidden=view!=='food';if(updateHash)history.replaceState(null,'',view==='places'?'#places':view==='food'?'#food':'#plan');window.scrollTo(0,document.getElementById('plan').offsetTop)}
     document.querySelectorAll('.trip-tab').forEach(tab=>tab.addEventListener('click',()=>setTripView(tab.dataset.view)));
     document.querySelector('a[href="#plan"]')?.addEventListener('click',event=>{event.preventDefault();setTripView('plan')});
     document.querySelectorAll('.filter[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter[data-filter]').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false')});btn.classList.add('active');btn.setAttribute('aria-pressed','true');const f=btn.dataset.filter;document.querySelectorAll('.day').forEach(d=>d.hidden=!(f==='all'||d.dataset.kind===f))}));
-    setTripView(location.hash==='#places'?'places':'plan',{updateHash:false});
+    setTripView(location.hash==='#places'?'places':location.hash==='#food'?'food':'plan',{updateHash:false});
     const initialPlace=location.hash.match(/^#place=(.+)$/);if(initialPlace)openPlace(decodeURIComponent(initialPlace[1]),{push:false});
   </script>
 </body>
